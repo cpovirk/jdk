@@ -124,7 +124,7 @@ public class URLClassLoader extends SecureClassLoader implements Closeable {
         this.ucp = new URLClassPath(urls, acc);
     }
 
-    URLClassLoader(String name, URL[] urls, ClassLoader parent,
+    URLClassLoader(@Nullable String name, URL[] urls, @Nullable ClassLoader parent,
                    AccessControlContext acc) {
         super(name, parent);
         // this is to make the stack depth consistent with 1.1
@@ -202,7 +202,7 @@ public class URLClassLoader extends SecureClassLoader implements Closeable {
      *             elements is {@code null}.
      * @see SecurityManager#checkCreateClassLoader
      */
-    public URLClassLoader(URL[] urls, ClassLoader parent,
+    public URLClassLoader(URL[] urls, @Nullable ClassLoader parent,
                           URLStreamHandlerFactory factory) {
         super(parent);
         // this is to make the stack depth consistent with 1.1
@@ -238,9 +238,9 @@ public class URLClassLoader extends SecureClassLoader implements Closeable {
      * @since 9
      * @spec JPMS
      */
-    public URLClassLoader(String name,
+    public URLClassLoader(@Nullable String name,
                           URL[] urls,
-                          ClassLoader parent) {
+                          @Nullable ClassLoader parent) {
         super(name, parent);
         // this is to make the stack depth consistent with 1.1
         SecurityManager security = System.getSecurityManager();
@@ -274,7 +274,7 @@ public class URLClassLoader extends SecureClassLoader implements Closeable {
      * @since 9
      * @spec JPMS
      */
-    public URLClassLoader(String name, URL[] urls, ClassLoader parent,
+    public URLClassLoader(@Nullable String name, URL[] urls, @Nullable ClassLoader parent,
                           URLStreamHandlerFactory factory) {
         super(name, parent);
         // this is to make the stack depth consistent with 1.1
