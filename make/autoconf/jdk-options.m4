@@ -1016,7 +1016,7 @@ AC_DEFUN([JDKOPT_SETUP_SIGNING_HOOK],
 #
 AC_DEFUN([JDKOPT_SETUP_JAVA_WARNINGS],
 [
-  UTIL_ARG_ENABLE(NAME: java-warnings-as-errors, DEFAULT: true,
+  UTIL_ARG_ENABLE(NAME: java-warnings-as-errors, DEFAULT: false,
       RESULT: JAVA_WARNINGS_AS_ERRORS,
       DESC: [consider java warnings to be an error])
   AC_SUBST(JAVA_WARNINGS_AS_ERRORS)

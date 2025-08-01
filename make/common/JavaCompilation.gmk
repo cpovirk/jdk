@@ -262,12 +262,6 @@ define SetupJavaCompilationBody
     $$(error Invalid value for COMPILER in SetupJavaCompilation for $1: '$$($1_COMPILER)')
   endif
 
-<<<<<<< HEAD
-  # Allow overriding on the command line
-  JAVA_WARNINGS_ARE_ERRORS ?=
-
-=======
->>>>>>> openjdk/master
   # Tell javac to do exactly as told and no more
   PARANOIA_FLAGS := -implicit:none -Xprefer:source -XDignore.symbol.file=true
 
