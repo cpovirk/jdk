@@ -2213,10 +2213,6 @@ public class CreateSymbols {
             }
             case RuntimeVisibleParameterAnnotationsAttribute a -> ((MethodDescription) feature).runtimeParameterAnnotations = parameterAnnotations2Description(a.parameterAnnotations());
             case RuntimeInvisibleParameterAnnotationsAttribute a -> ((MethodDescription) feature).classParameterAnnotations = parameterAnnotations2Description(a.parameterAnnotations());
-            case RuntimeInvisibleTypeAnnotationsAttribute _, RuntimeVisibleTypeAnnotationsAttribute _ -> {
-                // TODO(wmdietl): What should happen to type annotations?
-                return true;
-            }
             case ModuleAttribute a -> {
                 ModuleHeaderDescription header = (ModuleHeaderDescription) feature;
                 header.name = a.moduleName().name().stringValue();
